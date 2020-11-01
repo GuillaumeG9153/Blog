@@ -1,7 +1,8 @@
-baseURL = "http://example.org/"
+baseURL = "https://guillaumeg9153.github.io/Blog"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "anatole-master"
+publishDir = "docs"
 
 [params]
 title = "Guillaume Grandineau Blog"
@@ -15,7 +16,7 @@ profilePicture = "images/profile.jpg"
   name = "Home"
   identifier = "home"
   weight = 100
-  url = "/"
+  url = "https://guillaumeg9153.github.io/Blog"
 
   [[menu.main]]
   name = "Posts"
