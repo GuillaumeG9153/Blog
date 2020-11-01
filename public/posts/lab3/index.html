@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Guillaume Grandineau | Lab 3 Roll a ball VR </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Master Var works">
+    
+    <link rel="stylesheet"
+          href="http://example.org/css/style.min.2b188541d728e8afd69a6f1b8b83f89f2b138d671fb728eff20ff3f3dcf5b55e.css"
+          integrity="sha256-KxiFQdco6K/Wmm8bi4P4nysTjWcftyjv8g/z89z1tV4="
+          crossorigin="anonymous"
+          type="text/css"><link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="http://example.org/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://example.org/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://example.org/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://example.org/favicon-16x16.png">
+
+    <link rel="canonical" href="http://example.org/posts/lab3/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="http://example.org/js/anatole-header.min.e782db136ec18d105a4552702eac49f4620d6867da3fbf808bd53e806c96be6e.js"
+            integrity="sha256-54LbE27BjRBaRVJwLqxJ9GINaGfaP7&#43;Ai9U&#43;gGyWvm4="
+            crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lab 3 Roll a ball VR"/>
+<meta name="twitter:description" content="This new lab is still about the roll a ball game but this time we no longer use our phone to control the game board, this time we will be able to grab it with our hands thanks to VR. It was the most difficult labs of the 3, firstly, we had to import an oculus package to enable VR. Note that I used an oculus quest so I had to build the game like an android game."/>
+
+</head>
+<body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+        <div class="title">
+            <img src="http://example.org/images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">Guillaume Grandineau Blog</a></h3>
+            <div class="description">
+                <p>Master Var works</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Guillaume Grandineau 2020 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/posts/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+        
+        <li class="theme-switch-item">
+            <a class="theme-switch" title="Switch Theme">
+                <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post animated fadeInDown">
+        <div class="post-content">
+
+            <div class="post-title">
+                <h3>Lab 3 Roll a ball VR</h3>
+                
+            </div>
+
+            <p>This new lab is still about the roll a ball game but this time we no longer use our phone to control the game board, this time we will be able to grab it with our hands thanks to VR. It was the most difficult labs of the 3, firstly, we had to import an oculus package to enable VR. Note that I used an oculus quest so I had to build the game like an android game.
+<img src="/lab3-2.PNG" alt="image info">
+When we imported the roll a ball package in the VRTK project we had to create an empty object that will parent the game and add a box collider to it (in order to grab it).
+<img src="/lab3-3.PNG" alt="image info">
+We also had to remove all the part of the controller script related to the movement of the ball and we also had to remove the physic relation between the VR grab object and the roll a ball game because we don’t want the physics of the board to affect the physic of the ball (no bouncing) we also had to remove the tilting ground script.</p>
+<p>After that we had to think that it’s a VR game so we built a table to rise the game board up.
+<img src="/lab3-1.PNG" alt="image info">
+Also when we launch the game we spawn at the center of the scene so we had to move objects (table and board game) and reduce their size however the game board would be huge. For instance here, before moving objects I spawn inside the table.
+<img src="/lab3-5.PNG" alt="image info">
+<img src="/lab3-3.PNG" alt="image info">
+And so after doing the manipulations I can play the game, the only issue is that, as you can see on the video, there is an y offset when I grab the game board so I have to put my hands lower to see the ball and the collectibles.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/hqTp8mMuOyc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<p>You can find my scripts on my Github : <a href="https://github.com/GuillaumeG9153/Lab3_Roll-a-ball-VR">https://github.com/GuillaumeG9153/Lab3_Roll-a-ball-VR</a></p>
+
+        </div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="http://example.org/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js"
+        integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="http://example.org/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js"
+        integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="http://example.org/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
